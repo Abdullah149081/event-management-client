@@ -1,8 +1,12 @@
+import love from '@/assets/icon/icons.svg';
+import love1 from '@/assets/icon/icons1.svg';
+import love2 from '@/assets/icon/icons2.svg';
 import banner from '@/assets/images/banner-1.svg';
 import softStar from '@/assets/images/soft-star.svg';
 import Star from '@/assets/images/star-6.svg';
 import Container from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
+import BannerCard from './BannerCard';
 
 const Banner = () => {
   return (
@@ -40,6 +44,17 @@ const Banner = () => {
             <img src={softStar} alt="" />
           </div>
         </div>
+      </div>
+      <div className="-mt-10 flex flex-col gap-5 xl:flex-row">
+        <BannerCard>
+          <img src={love} alt="love" />
+        </BannerCard>
+        <BannerCard className="bg-[#F2C94C]">
+          <img src={love1} alt="love1" />
+        </BannerCard>
+        <BannerCard className="bg-[#8AB2DC]">
+          <img src={love2} alt="love2" />
+        </BannerCard>
       </div>
     </Container>
   );
