@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
+    'react/function-component-definition': 0,
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
