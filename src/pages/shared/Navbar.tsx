@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
   return (
     <nav className=" relative  z-10  w-full border-b md:border-0">
-      <Container className=" items-center justify-between px-4 md:flex md:px-8">
+      <Container className=" items-center justify-between px-4 md:flex">
         <div className="flex items-center justify-between py-3 md:block md:py-5">
           <Link to="/">
             <h1 className="text-3xl font-bold  ">
