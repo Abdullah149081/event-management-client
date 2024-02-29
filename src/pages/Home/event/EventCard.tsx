@@ -27,7 +27,7 @@ const EventCard = ({ event, item }: EventCardProps) => {
         alt={name}
       />
       <div className="flex h-[26px] flex-col items-start justify-start gap-2 self-stretch">
-        <div className="text-center font-['Roboto'] text-2xl font-medium leading-relaxed text-black">
+        <div className="text-center  text-2xl font-medium leading-relaxed text-black">
           {name}
         </div>
       </div>
