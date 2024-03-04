@@ -10,18 +10,18 @@ import BannerCard from './BannerCard';
 
 const Banner = () => {
   return (
-    <Container>
+    <Container className="mt-2 md:mt-0">
       <div className="flex flex-col items-center justify-between  xl:flex-row">
         <div className="inline-flex flex-col items-start justify-start gap-8 xl:h-[422px] xl:w-[576px]">
           <div className="flex flex-col items-start justify-start gap-2">
-            <div className="text-[64px]  font-extrabold uppercase leading-[70.40px] text-black xl:w-[540px]">
+            <div className="text-2xl font-extrabold  uppercase text-black md:text-[64px] md:leading-[70.40px] xl:w-[540px]">
               Brand New event Packages
             </div>
-            <div className=" bg-gradient-to-r from-[#FE8900] from-40% to-[#5A01CB] to-60% bg-clip-text text-[56px] font-extrabold leading-[61.60px] text-transparent">
+            <div className=" bg-gradient-to-r from-[#FE8900] from-40% to-[#5A01CB] to-60% bg-clip-text text-[20px] font-extrabold text-transparent md:text-[56px] md:leading-[61.60px]">
               For Winter
             </div>
           </div>
-          <div className="text-xl  text-zinc-800   xl:w-[576px]">
+          <div className="w-[322px]  text-sm font-normal leading-snug  text-zinc-800  md:w-[576px]   md:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
             imperdiet sed id elementum. Quam vel aliquam sit vulputate. Faucibus
             nec gravida ipsum pulvinar vel non.
@@ -31,21 +31,21 @@ const Banner = () => {
           </Button>
         </div>
 
-        <div className="relative flex items-center justify-center rounded-[800px] border border-black xl:h-[754px] xl:w-[584px]">
+        <div className="relative mt-5 flex items-center justify-center rounded-[800px] border border-black md:mt-0 xl:h-[754px] xl:w-[584px]">
           <img
             className="rounded-[600px] p-10 xl:h-[651px] xl:w-[484px] xl:p-0"
             src={banner}
             alt=""
           />
-          <div className="absolute left-0 top-16 z-0">
-            <img src={Star} alt="" />
+          <div className="absolute left-[calc(100%-98%)] top-16 z-0 ">
+            <img src={Star} alt="" className="size-10 md:size-full" />
           </div>
-          <div className="absolute bottom-0 right-0 z-0">
-            <img src={softStar} alt="" />
+          <div className="absolute bottom-[calc(100%-92%)] right-8 z-0 md:bottom-0 md:right-0">
+            <img src={softStar} alt="" className="size-10 md:size-full" />
           </div>
         </div>
       </div>
-      <div className="-mt-10 flex flex-col gap-5 xl:flex-row">
+      <div className="mt-5 flex  flex-col items-center gap-5 md:-mt-10 xl:flex-row">
         <BannerCard>
           <img src={love} alt="love" />
         </BannerCard>
