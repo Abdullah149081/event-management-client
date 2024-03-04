@@ -8,7 +8,7 @@ const ServiceCard = () => {
         {/* card  */}
         <div className="  group-hover:opacity-0  ">
           <img
-            className="h-[221.20px] w-[316.50px] rounded-md md:h-[187.17px]  md:w-[267.81px] xl:h-[253px] xl:w-[362px]"
+            className="h-[221.20px] w-[316.50px] rounded-md object-cover  md:h-[187.17px] md:w-[267.81px] xl:h-[253px] xl:w-[362px]"
             src="https://via.placeholder.com/362x253"
             alt=""
           />
