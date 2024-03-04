@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const Subscribe = () => {
   return (
-    <div className=" bg-gradient-to-r from-cyan-900 from-10% to-cyan-800 to-90%  py-10 text-white">
+    <div className=" bg-gradient-to-r from-fuchsia-500/20 from-25%  to-cyan-400/20 to-80% py-10   text-slate-900 ">
       <Container className="">
         <div>
           <div className="flex gap-10 ">
@@ -19,7 +19,7 @@ const Subscribe = () => {
               <div className="flex">
                 <div className="w-full">
                   <input
-                    className="h-full w-full border border-white bg-transparent p-4 outline-none placeholder:text-white/80"
+                    className="h-full w-full border border-cyan-600 bg-transparent p-4 outline-none placeholder:text-slate-900"
                     type="email"
                     placeholder="Enter your email address"
                     name=""
@@ -27,7 +27,7 @@ const Subscribe = () => {
                   />
                 </div>
                 <div>
-                  <Button className="h-full rounded-none border-y border-r border-white bg-transparent font-bold uppercase tracking-wide text-white">
+                  <Button className="h-full rounded-none border-y border-r border-cyan-600 bg-transparent font-bold uppercase tracking-wide text-slate-900 hover:text-white">
                     Join The list
                   </Button>
                 </div>
