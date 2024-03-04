@@ -6,7 +6,7 @@ const Client = () => {
   return (
     <Container className="pb-32">
       <HeaderTitle>Our Valuable client</HeaderTitle>
-      <div className="mt-20 grid gap-[94px] xl:grid-cols-5">
+      <div className="mt-10 md:mt-20 grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-[94px] xl:grid-cols-5">
         {clients.map((client, index) => (
           <img key={index} src={client} alt={client} />
         ))}
