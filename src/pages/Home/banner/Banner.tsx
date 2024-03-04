@@ -11,8 +11,8 @@ import BannerCard from './BannerCard';
 const Banner = () => {
   return (
     <Container className="mt-2 md:mt-0">
-      <div className="flex flex-col items-center justify-between  xl:flex-row">
-        <div className="inline-flex flex-col items-start justify-start gap-8 xl:h-[422px] xl:w-[576px]">
+      <div className="flex flex-col items-center justify-between  xl:flex-row ">
+        <div className="inline-flex w-full flex-col items-start justify-start gap-8  xl:h-[422px] xl:w-[576px]">
           <div className="flex flex-col items-start justify-start gap-2">
             <div className="text-2xl font-extrabold  uppercase text-black md:text-[64px] md:leading-[70.40px] xl:w-[540px]">
               Brand New event Packages
@@ -45,7 +45,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="mt-5 flex  flex-col items-center gap-5 md:-mt-10 xl:flex-row">
+      <div className="mt-5 flex  flex-col items-center gap-5 md:flex-row xl:-mt-10">
         <BannerCard>
           <img src={love} alt="love" />
         </BannerCard>
