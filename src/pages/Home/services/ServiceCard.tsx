@@ -8,12 +8,13 @@ const ServiceCard = () => {
         {/* card  */}
         <div className="  group-hover:opacity-0  ">
           <img
-            className="h-[253px] w-[362px] rounded-md"
+            className="h-[221.20px] w-[316.50px] rounded-md md:h-[187.17px]  md:w-[267.81px] xl:h-[253px] xl:w-[362px]"
             src="https://via.placeholder.com/362x253"
+            alt=""
           />
           <div className="mt-6 inline-flex flex-col items-start justify-start gap-3 self-stretch">
             <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
-              <div className="text-center  text-[32px] font-extrabold leading-9 text-black">
+              <div className="text-center   text-[27.98px] font-extrabold  leading-[30.78px]  text-black  md:text-2xl md:leading-relaxed  xl:text-[32px] xl:leading-9">
                 Corporate event
               </div>
             </div>
@@ -27,7 +28,7 @@ const ServiceCard = () => {
                     alt="check"
                   />
                 </div>
-                <div className="font-plus text-lg font-normal leading-[27px] text-black">
+                <div className="font-plus  text-base font-normal leading-normal text-black md:text-sm md:leading-tight xl:text-lg xl:leading-[27px]">
                   One day pas access all lecture
                 </div>
               </div>
@@ -36,14 +37,14 @@ const ServiceCard = () => {
         </div>
       </div>
       {/* hover */}
-      <div className=" absolute top-0  z-10 max-w-[412px]  transform rounded-md    bg-blue-500/30 px-7 py-8 opacity-0 transition duration-500 ease-in-out group-hover:opacity-100 xl:bg-blue-500/5">
+      <div className=" absolute  top-0 z-10 transform rounded-md  bg-blue-500/40 px-4  py-8 opacity-0   shadow transition duration-500 ease-in-out group-hover:opacity-100 md:w-[304.80px] xl:w-[412px] xl:bg-blue-500/5 xl:pl-7">
         <div className=" inline-flex flex-col items-start justify-start gap-3">
           <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
-            <div className="text-center  text-[32px] font-extrabold leading-9 text-black">
+            <div className=" text-center  text-[27.98px] font-extrabold  leading-[30.78px] text-black md:text-2xl md:leading-relaxed  xl:text-[32px]  xl:leading-9">
               Wedding event
             </div>
           </div>
-          <div className="max-w-[342px]    leading-relaxed tracking-wide text-slate-500">
+          <div className=" max-w-[342px]  text-sm  leading-snug   tracking-wide  text-slate-500 md:text-xs md:leading-[18.94px] xl:text-base xl:leading-relaxed">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
             posuere felis arcu tellus tempus in in ultricies.Ut posuere felis
@@ -65,13 +66,13 @@ const ServiceCard = () => {
                   className="absolute left-[5px] top-[5px] h-2.5 w-2.5"
                 />
               </div>
-              <div className="font-plus text-lg  leading-[27px] text-black">
+              <div className=" font-plus  text-base font-normal leading-normal text-black md:text-sm md:leading-tight xl:text-lg xl:leading-[27px]">
                 One day pas access all lecture
               </div>
             </div>
           </div>
         </div>
-        <Button className="mt-12 inline-flex h-[52px] w-[359px] items-center justify-center gap-2.5 rounded-none bg-blue-600 px-10 py-6 font-bold">
+        <Button className="mt-12  inline-flex h-[52px] w-[310.88px] items-center justify-center gap-2.5 rounded-none bg-blue-600  py-6 font-bold md:w-[265.59px]  xl:w-[340px]">
           Check it out
         </Button>
       </div>
