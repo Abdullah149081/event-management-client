@@ -6,7 +6,7 @@ const HeaderTitle = ({ children, className }: TChildren) => {
     <div className="mt-20">
       <h1
         className={cn(
-          "text-black'  text-center  text-[32px]  font-extrabold capitalize leading-9 md:leading-normal  lg:text-[64px]",
+          "text-black'  text-center    text-[32px]  font-extrabold capitalize  leading-9 tracking-wide md:text-[34.13px] md:leading-[40.96px] xl:text-[64px] xl:leading-normal",
           className
         )}
       >
