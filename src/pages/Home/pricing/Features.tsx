@@ -11,10 +11,10 @@ type FeaturesProps = {
 const Features = ({ feature }: FeaturesProps) => {
   const { text, value } = feature || {};
   return (
-    <div className="inline-flex max-w-[360px] flex-col items-start justify-center gap-5 pt-5">
+    <div className="flex max-w-[360px] flex-col items-start justify-center gap-5 pt-5">
       <div
         className={cn(
-          'inline-flex items-start justify-start gap-3',
+          'flex items-start justify-start gap-3',
           !value && 'opacity-30'
         )}
       >
@@ -29,7 +29,7 @@ const Features = ({ feature }: FeaturesProps) => {
         </div>
         <div
           className={cn(
-            'text-base  font-normal leading-normal text-slate-600 lg:w-[324px]',
+            'w-full text-base  font-normal leading-normal text-slate-600 xl:w-[324px]',
             !value && ' font-light  line-through'
           )}
         >

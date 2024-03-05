@@ -19,7 +19,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
   const { name, price, icon, features } = plan || {};
 
   return (
-    <div className="relative bg-white  py-[28px] font-inter">
+    <div className="relative py-[28px]   font-inter">
       {name === 'Premium' && (
         <div className="absolute top-0  w-full">
           <div className="  mx-auto flex w-1/2 flex-col items-center justify-center gap-2.5 rounded-tl-xl rounded-tr-xl bg-blue-600 px-4 py-[9px]">
@@ -30,10 +30,10 @@ const PricingCard = ({ plan }: PricingCardProps) => {
         </div>
       )}
       <div className="relative h-full rounded-[20px] bg-white px-8 py-7 shadow">
-        <div className="absolute left-0 top-0 w-full lg:w-[412px]   ">
+        <div className="absolute left-0 top-0 w-full    ">
           <div
             className={cn(
-              'mx-auto h-[5.8px] w-[calc(100%-10px)] rounded-t-[20px]  bg-pink-400 lg:w-[calc(412px-10px)]',
+              'mx-auto h-[5.8px] w-[calc(100%-10px)] rounded-t-[20px]  bg-pink-400 ',
               name === 'Premium' && 'bg-blue-600',
               name === 'Business' && 'bg-red-500'
             )}
