@@ -6,7 +6,7 @@ import { plans } from './package';
 
 const Pricing = () => {
   return (
-    <Container className="relative pb-28  ">
+    <Container className="relative pb-16 xl:pb-28  ">
       <div className="absolute -left-[120px] -top-[428px] -z-10 h-[1017.96px] w-2/5 rotate-[40.34deg] rounded-full bg-pink-500/30 blur-[244px] lg:w-[749.95px] " />
       <div className="absolute -bottom-[calc(100px+400px)]  right-[calc(40px-15px)]  h-[1017.96px] w-[649.95px]   rounded-full bg-blue-400/35 blur-[244px]" />
       <HeaderTitle>Explore our pricing plans</HeaderTitle>
