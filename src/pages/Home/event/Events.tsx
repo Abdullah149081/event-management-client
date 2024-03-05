@@ -7,7 +7,7 @@ import EventCard from './EventCard';
 const Events = () => {
   const items = event;
   return (
-    <Container className="pb-32">
+    <Container className="xl:pb-32">
       <div className="space-y-3">
         <HeaderTitle>Event Items</HeaderTitle>
         <HeaderText className="max-w-[327px] md:max-w-[546.90px] ">
