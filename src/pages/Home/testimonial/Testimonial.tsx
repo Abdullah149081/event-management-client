@@ -11,7 +11,7 @@ import TestimonialCard from './TestimonialCard';
 
 const Testimonial = () => {
   return (
-    <Container className="pb-32">
+    <Container className="pb-16 xl:pb-32">
       <HeaderTitle className="mx-0 px-0 text-start ">
         What Our Client Said about us
       </HeaderTitle>
@@ -21,7 +21,7 @@ const Testimonial = () => {
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="mt-14 pl-1 md:basis-1/2 lg:basis-[42%]"
+              className="mt-14 pl-1  md:basis-3/5 lg:basis-[45%] xl:basis-[42%]"
             >
               <div className="group p-1 ">
                 <TestimonialCard />
@@ -29,8 +29,8 @@ const Testimonial = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="size-[85px] hover:bg-blue-600 hover:text-white" />
-        <CarouselNext className="size-[85px] hover:bg-blue-600 hover:text-white" />
+        <CarouselPrevious className="hover:bg-blue-600 hover:text-white lg:size-[85px]" />
+        <CarouselNext className="hover:bg-blue-600 hover:text-white lg:size-[85px]" />
       </Carousel>
     </Container>
   );
