@@ -37,14 +37,14 @@ const ServiceCard = () => {
         </div>
       </div>
       {/* hover */}
-      <div className=" absolute  top-0 z-10 transform rounded-md  bg-blue-500/40 px-4  py-8 opacity-0   shadow transition duration-500 ease-in-out group-hover:opacity-100 md:w-[304.80px] xl:w-[412px] xl:bg-blue-500/5 xl:pl-7">
+      <div className=" absolute  top-0 z-20 transform rounded-md  bg-blue-500/40 px-4  py-8 opacity-0   shadow transition duration-500 ease-in-out group-hover:opacity-100 md:max-w-[304.80px] xl:max-w-[412px] xl:bg-blue-500/5 xl:pl-7">
         <div className=" inline-flex flex-col items-start justify-start gap-3">
           <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
             <div className=" text-center  text-[27.98px] font-extrabold  leading-[30.78px] text-black md:text-2xl md:leading-relaxed  xl:text-[32px]  xl:leading-9">
               Wedding event
             </div>
           </div>
-          <div className=" max-w-[342px]  text-sm  leading-snug   tracking-wide  text-slate-500 md:text-xs md:leading-[18.94px] xl:text-base xl:leading-relaxed">
+          <div className=" text-sm  leading-snug  tracking-wide   text-slate-500   md:text-xs md:leading-[18.94px] xl:max-w-[342px] xl:text-base xl:leading-relaxed">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
             posuere felis arcu tellus tempus in in ultricies.Ut posuere felis
@@ -72,7 +72,7 @@ const ServiceCard = () => {
             </div>
           </div>
         </div>
-        <Button className="mt-12  inline-flex h-[52px] w-[310.88px] items-center justify-center gap-2.5 rounded-none bg-blue-600  py-6 font-bold md:w-[265.59px]  xl:w-[340px]">
+        <Button className="mt-12  inline-flex h-[52px] w-full items-center justify-center gap-2.5 rounded-none bg-blue-600  py-6 font-bold   xl:w-[340px]">
           Check it out
         </Button>
       </div>
