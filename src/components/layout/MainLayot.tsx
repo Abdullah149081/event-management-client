@@ -3,7 +3,7 @@ import Navbar from '@/pages/shared/Navbar';
 
 function MainLayout() {
   return (
-    <div className="">
+    <div className="mx-auto max-w-[1440px]">
       <Navbar />
       <div>
         <Outlet />
