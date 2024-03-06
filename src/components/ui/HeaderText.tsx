@@ -5,7 +5,7 @@ const HeaderText = ({ children, className }: TChildren) => {
   return (
     <div
       className={cn(
-        'mx-auto max-w-[701px] text-center  text-lg font-normal leading-[28.80px] text-slate-500',
+        'mx-auto  text-center   text-sm  font-normal  leading-snug  text-slate-500 xl:max-w-[701px]   xl:text-lg xl:leading-[28.80px]',
         className
       )}
     >
