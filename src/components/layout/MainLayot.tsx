@@ -1,5 +1,6 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Navbar from '@/pages/shared/Navbar';
+import Footer from '@/pages/shared/Footer';
 
 function MainLayout() {
   return (
@@ -8,6 +9,7 @@ function MainLayout() {
       <div>
         <Outlet />
       </div>
+      <Footer />
       <ScrollRestoration />
     </div>
   );
