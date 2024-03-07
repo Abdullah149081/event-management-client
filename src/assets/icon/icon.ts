@@ -1,3 +1,4 @@
+import acc from '@/assets/icon/accessibility.svg';
 import duotonePackage from '@/assets/icon/duotone-package.svg';
 import duotoneRocketLaunch from '@/assets/icon/duotone-rocket-launch.svg';
 import duotoneStack from '@/assets/icon/duotone-stack.svg';
@@ -9,3 +10,4 @@ export const rocketIcon = duotoneRocketLaunch;
 export const stackIcon = duotoneStack;
 export const checkIcon = fiCheck;
 export const arrowRightIcon = outlined;
+export const accessibility = acc;
