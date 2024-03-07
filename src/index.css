@@ -74,4 +74,7 @@
     font-family: 'Roboto', sans-serif;
     @apply bg-background text-foreground;
   }
+  footer ul li span {
+    @apply cursor-pointer text-base font-normal leading-snug text-slate-200 hover:text-primary;
+  }
 }
