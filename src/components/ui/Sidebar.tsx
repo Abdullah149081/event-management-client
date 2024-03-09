@@ -1,6 +1,6 @@
+import { cn } from '@/lib/utils';
 import { Home, LayoutDashboard } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const navAdmin = [
@@ -17,7 +17,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="bg-dark-gray/30 sticky left-0 top-0 col-span-2 h-screen overflow-y-scroll text-white shadow-inner">
+    <aside className="bg-dark-gray/30 no-scrollbar sticky left-0 top-0 col-span-2 h-screen overflow-y-scroll text-white shadow-inner">
       <nav>
         <ul className="mt-4">
           {navAdmin.map((item) => (
