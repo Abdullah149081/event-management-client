@@ -10,6 +10,7 @@ const Navbar = () => {
     { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
     { title: 'Contact ', path: '/contact' },
+    { title: 'DashBoard ', path: '/dashBoard' },
   ];
   return (
     <nav className=" relative  z-10  w-full border-b md:border-0">
