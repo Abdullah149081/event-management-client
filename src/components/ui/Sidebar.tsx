@@ -17,7 +17,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="bg-dark-gray/30 no-scrollbar sticky left-0 top-0 col-span-2 h-screen overflow-y-scroll text-white shadow-inner">
+    <aside className=" no-scrollbar sticky left-0 top-0 col-span-2 h-screen overflow-y-scroll bg-gradient-to-t from-gray-700/20 from-25% to-cyan-700/20 to-80%  text-white shadow-2xl">
       <nav>
         <ul className="mt-4">
           {navAdmin.map((item) => (
@@ -26,9 +26,9 @@ const Sidebar = () => {
                 to={item.path}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center rounded-md bg-primary p-2 text-lg font-bold uppercase text-primary-foreground transition-all hover:bg-primary/20 hover:text-white',
+                    'flex items-center rounded-md  p-2 text-lg font-bold uppercase  text-primary-foreground transition-all hover:bg-fuchsia-500/60 hover:text-white',
                     {
-                      'bg-black text-white': isActive,
+                      'bg-fuchsia-400/20 text-white': isActive,
                     }
                   )
                 }
