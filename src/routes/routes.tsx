@@ -2,6 +2,9 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import App from '@/App';
 import DashBoardLayout from '@/components/layout/DashBoardLayout';
 import DashBoard from '@/pages/Dashboard/DashBoard';
+import DashboardRecent from '@/pages/Dashboard/DashBoardRecent';
+import DashboardEvent from '@/pages/Dashboard/DashboardEvent';
+import DashboardServices from '@/pages/Dashboard/DashboardServices';
 import Home from '@/pages/Home/Home';
 
 const router = createBrowserRouter([
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
       {
         path: 'event',
         element: <DashBoard />,
+      },
+      {
+        path: 'dashBoard-event',
+        element: <DashboardEvent />,
+      },
+      {
+        path: 'dashBoard-react',
+        element: <DashboardRecent />,
+      },
+      {
+        path: 'dashBoard-services',
+        element: <DashboardServices />,
       },
     ],
   },
