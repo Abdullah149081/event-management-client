@@ -1,11 +1,16 @@
 import Container from '@/components/ui/Container';
 import HeaderText from '@/components/ui/HeaderText';
 import HeaderTitle from '@/components/ui/HeaderTitle';
-import { event } from '@/utils/test';
+import useEvents from '@/hooks/event.hook';
 import EventCard from './EventCard';
 
 const Events = () => {
-  const items = event;
+  const { eventData: items, isLoading } = useEvents('6');
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Container className="xl:pb-32">
       <div className="space-y-3">
