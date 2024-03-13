@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -12,26 +13,36 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import config from '@/config';
+import axiosClient from '@/network/apiClient.axios';
 
 const formSchema = z.object({
-  eventname: z.string().min(2, {
+  name: z.string().min(2, {
     message: 'Event name must be at least 2 characters long',
   }),
-  eventImage: z.string().url(),
+  img: z.string().url(),
 });
 
 const EventModal = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      eventname: '',
-      eventImage: '',
+      name: '',
+      img: '',
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    axiosClient.post('/events', values).then((res) => {
+      if (res.data.eventId) {
+        toast.success(res.data.message, {
+          position: 'top-right',
+        });
+        form.reset();
+      }
+    });
   }
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -43,7 +54,7 @@ const EventModal = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
-                name="eventname"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Event Name</FormLabel>
@@ -56,12 +67,12 @@ const EventModal = () => {
               />
               <FormField
                 control={form.control}
-                name="eventImage"
+                name="img"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Event Image</FormLabel>
+                    <FormLabel>Event Image Url</FormLabel>
                     <FormControl>
-                      <Input type="file" {...field} />
+                      <Input type="url" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
