@@ -3,9 +3,9 @@ import { TChildren } from '@/types';
 
 const BannerCard = ({ children, className }: TChildren) => {
   return (
-    <div className=" inline-flex h-[194px] w-56 flex-col items-start justify-start gap-2 rounded-[32px] border-2  border-white px-4 py-6">
+    <div className=" flex h-[194px] w-56 flex-col items-start justify-start gap-2 rounded-[32px] border-2  border-white px-4 py-6">
       <div className="flex flex-col items-start justify-start gap-8">
-        <div className="inline-flex items-center justify-start gap-[194px]">
+        <div className="flex items-center justify-start gap-[194px]">
           <div className="relative h-12 w-12">
             <div
               className={cn(
