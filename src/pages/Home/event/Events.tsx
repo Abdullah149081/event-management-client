@@ -1,14 +1,18 @@
 import Container from '@/components/ui/Container';
 import HeaderText from '@/components/ui/HeaderText';
 import HeaderTitle from '@/components/ui/HeaderTitle';
+import Loading from '@/components/ui/loading';
 import useEvents from '@/hooks/event.hook';
 import EventCard from './EventCard';
 
 const Events = () => {
-  const { eventData: items, isLoading } = useEvents('6');
+  const { eventData: items, isLoading, isError } = useEvents('6');
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
+  }
+  if (isError) {
+    return <Loading error />;
   }
 
   return (
@@ -16,8 +20,9 @@ const Events = () => {
       <div className="space-y-3">
         <HeaderTitle>Event Items</HeaderTitle>
         <HeaderText className="max-w-[327px] md:max-w-[546.90px] ">
-          Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-          ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
+          SoundScape: Where music transcends boundaries. Experience a fusion of
+          genres, rhythms, and melodies. Join us for an unforgettable
+          celebration of sound.
         </HeaderText>
       </div>
 
