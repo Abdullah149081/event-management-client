@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const EventForm = ({ form, field, onSubmit }) => {
+const EventForm = ({ form, onSubmit }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
