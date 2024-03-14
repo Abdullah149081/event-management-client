@@ -10,7 +10,7 @@ import axiosClient from '@/network/apiClient.axios';
 import { formSchema } from '@/validate';
 import EventForm from './EventForm';
 
-const EventModal = () => {
+const EventAddModal = () => {
   const { refetch } = useEvents('');
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -53,4 +53,4 @@ const EventModal = () => {
   );
 };
 
-export default EventModal;
+export default EventAddModal;
