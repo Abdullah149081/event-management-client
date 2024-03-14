@@ -22,9 +22,9 @@ const Banner = () => {
             </div>
           </div>
           <div className="w-[322px]  text-sm font-normal leading-snug  text-zinc-800  md:w-[576px]   md:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
-            imperdiet sed id elementum. Quam vel aliquam sit vulputate. Faucibus
-            nec gravida ipsum pulvinar vel non.
+            Event 360 Uniting communities through unforgettable experiences.
+            Explore, connect, and celebrate with us. Your journey to
+            extraordinary events starts here.
           </div>
           <Button className="rounded-none px-10 py-6 xl:w-[195px]">
             Explore
@@ -48,12 +48,22 @@ const Banner = () => {
       <div className="mt-5 flex  flex-col items-center gap-5 md:flex-row xl:-mt-10">
         <BannerCard>
           <img src={love} alt="love" />
+          <p>
+            Immersive Engage in vibrant experiences that resonate long after.
+          </p>
         </BannerCard>
         <BannerCard className="bg-[#F2C94C]">
           <img src={love1} alt="love1" />
+          <p>
+            Dynamic Explore diverse events igniting your passion and curiosity.
+          </p>
         </BannerCard>
         <BannerCard className="bg-[#8AB2DC]">
           <img src={love2} alt="love2" />
+          <p>
+            Lasting memories, vibrant experiences, and inclusive gatherings
+            await you.
+          </p>
         </BannerCard>
       </div>
     </Container>
