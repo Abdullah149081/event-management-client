@@ -14,13 +14,12 @@ const BannerCard = ({ children, className }: TChildren) => {
               )}
             />
             <div className="absolute left-[12px] top-[12px] h-6 w-6">
-              {children}
+              {(children as React.ReactNode[])[0]}
             </div>
           </div>
         </div>
         <div className="w-48 font-lato text-base font-light leading-snug text-zinc-800">
-          Lorem ipsum dolor sit amet, consectetu adipiscing elit. Cursus
-          imperdiet sed id.
+          {(children as React.ReactNode[])[1]}
         </div>
       </div>
     </div>
