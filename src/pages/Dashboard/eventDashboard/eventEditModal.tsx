@@ -2,20 +2,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
 import axiosClient from '@/network/apiClient.axios';
 import { TEvent } from '@/types';
 import { formSchema } from '@/validate';
+import EventForm from './EventForm';
 
 type EventEditModalProps = {
   event: TEvent;
@@ -57,37 +50,7 @@ const EventEditModal = ({ event, refetch }: EventEditModalProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <div className="grid gap-4 py-4">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Event Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="event" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="img"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Event Image Url</FormLabel>
-                    <FormControl>
-                      <Input type="url" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit">Submit</Button>
-            </form>
-          </Form>
+          <EventForm form={form} onSubmit={() => onSubmit(form.getValues())} />
         </div>
       </DialogContent>
     </Dialog>
