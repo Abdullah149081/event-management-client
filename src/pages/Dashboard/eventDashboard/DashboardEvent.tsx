@@ -10,9 +10,9 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import useEvents from '@/hooks/event.hook';
-import axiosClient from '@/network/apiClient.axios';
+import { deleteEvent } from '@/api';
 import { TEvent } from '@/types';
-import Swal from 'sweetalert2';
+import handleDelete from '@/utils/handleDelete';
 import EventAddModal from './eventAddModal';
 import EventEditModal from './eventEditModal';
 
@@ -22,30 +22,14 @@ const DashboardEvent = () => {
   if (isLoading) {
     return <Loading />;
   }
-  const handleDelete = (id: string) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosClient
-          .delete(`/events/${id}`)
-          .then((res) => {
-            if (res.data?.result.modifiedCount > 0) {
-              Swal.fire('Deleted!', `${res.data.message}`, 'success');
-              refetch();
-            }
-          })
-          .catch((error) => {
-            Swal.fire('Error!', `${error.message}`, 'error');
-          });
-      }
-    });
+
+  const handleDeleteClick = (id: string) => {
+    handleDelete(
+      id,
+      'Are you sure you want to delete this event?',
+      deleteEvent,
+      refetch
+    );
   };
 
   return (
@@ -80,7 +64,7 @@ const DashboardEvent = () => {
                 <div className="flex items-center justify-center gap-3 ">
                   <EventEditModal event={event} refetch={refetch} />
                   <Button
-                    onClick={() => handleDelete(event._id)}
+                    onClick={() => handleDeleteClick(event._id)}
                     variant="destructive"
                   >
                     Delete
