@@ -1,12 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 import { z } from 'zod';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-
+import { postEvent } from '@/api';
 import useEvents from '@/hooks/event.hook';
-import axiosClient from '@/network/apiClient.axios';
+import handlePost from '@/utils/handlePost';
 import { formSchema } from '@/validate';
 import EventForm from './EventForm';
 
@@ -21,22 +20,7 @@ const EventAddModal = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    axiosClient
-      .post('/events', values)
-      .then((res) => {
-        if (res.data.eventId) {
-          toast.success(res.data.message, {
-            position: 'top-right',
-          });
-          form.reset();
-          refetch();
-        }
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message, {
-          position: 'top-center',
-        });
-      });
+    handlePost(values, postEvent, refetch, form.reset);
   }
 
   return (
