@@ -1,12 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 import { z } from 'zod';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-
-import axiosClient from '@/network/apiClient.axios';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { updateEvent } from '@/api';
 import { TEvent } from '@/types';
+import handleUpdate from '@/utils/handleUpdate';
 import { formSchema } from '@/validate';
 import EventForm from './EventForm';
 
@@ -25,22 +24,7 @@ const EventEditModal = ({ event, refetch }: EventEditModalProps) => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    axiosClient
-      .put(`/events/${event._id}`, values)
-      .then((res) => {
-        if (res.data?.data.modifiedCount > 0) {
-          toast.success(res.data.message, {
-            position: 'top-center',
-          });
-          form.reset();
-          refetch();
-        }
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message, {
-          position: 'top-center',
-        });
-      });
+    handleUpdate(event._id, values, updateEvent, refetch);
   }
 
   return (
