@@ -1,9 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { updateEvent } from '@/api';
+import Modal from '@/components/ui/modal';
 import { TEvent } from '@/types';
 import handleUpdate from '@/utils/handleUpdate';
 import { formSchema } from '@/validate';
@@ -28,16 +27,9 @@ const EventEditModal = ({ event, refetch }: EventEditModalProps) => {
   }
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Edit</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <div className="grid gap-4 py-4">
-          <EventForm form={form} onSubmit={() => onSubmit(form.getValues())} />
-        </div>
-      </DialogContent>
-    </Dialog>
+    <Modal buttonName="Edit Event">
+      <EventForm form={form} onSubmit={() => onSubmit(form.getValues())} />
+    </Modal>
   );
 };
 
