@@ -1,6 +1,12 @@
-import { cn } from '@/lib/utils';
-import { Home, LayoutDashboard } from 'lucide-react';
+import {
+  Calendar,
+  CalendarDays,
+  HandPlatter,
+  Home,
+  LayoutDashboard,
+} from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const navAdmin = [
@@ -8,6 +14,22 @@ const Sidebar = () => {
       name: 'Dashboard',
       path: '/dashBoard/event',
       icon: LayoutDashboard,
+    },
+
+    {
+      name: 'Event',
+      path: '/dashBoard/dashBoard-event',
+      icon: Calendar,
+    },
+    {
+      name: 'Recent Event',
+      path: '/dashBoard/dashBoard-recent',
+      icon: CalendarDays,
+    },
+    {
+      name: 'Services',
+      path: '/dashBoard/dashBoard-services',
+      icon: HandPlatter,
     },
     {
       name: 'Home',
