@@ -9,12 +9,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import useEvents from '@/hooks/event.hook';
+
 import { deleteEvent } from '@/api';
 import { TEvent } from '@/types';
 import handleDelete from '@/utils/handleDelete';
 import EventAddModal from './eventAddModal';
 import EventEditModal from './eventEditModal';
+import { useEvents } from '@/hooks';
 
 const DashboardEvent = () => {
   const { eventData, isLoading, refetch } = useEvents('');

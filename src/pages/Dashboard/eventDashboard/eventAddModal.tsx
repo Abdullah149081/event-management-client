@@ -4,10 +4,11 @@ import { z } from 'zod';
 import { postEvent } from '@/api';
 
 import Modal from '@/components/ui/modal';
-import useEvents from '@/hooks/event.hook';
+
 import handlePost from '@/utils/handlePost';
 import { formSchema } from '@/validate';
 import EventForm from './EventForm';
+import { useEvents } from '@/hooks';
 
 const EventAddModal = () => {
   const { refetch } = useEvents('');
