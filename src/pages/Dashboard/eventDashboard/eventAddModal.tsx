@@ -1,9 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
 import { postEvent } from '@/api';
+
+import Modal from '@/components/ui/modal';
 import useEvents from '@/hooks/event.hook';
 import handlePost from '@/utils/handlePost';
 import { formSchema } from '@/validate';
@@ -24,16 +24,9 @@ const EventAddModal = () => {
   }
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button className="font-bold uppercase">Add Event</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <div className="grid gap-4 py-4">
-          <EventForm form={form} onSubmit={() => onSubmit(form.getValues())} />
-        </div>
-      </DialogContent>
-    </Dialog>
+    <Modal buttonName="Add Event">
+      <EventForm form={form} onSubmit={() => onSubmit(form.getValues())} />
+    </Modal>
   );
 };
 
