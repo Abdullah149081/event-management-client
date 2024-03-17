@@ -2,8 +2,8 @@ import Container from '@/components/ui/Container';
 import HeaderText from '@/components/ui/HeaderText';
 import HeaderTitle from '@/components/ui/HeaderTitle';
 import Loading from '@/components/ui/loading';
-import useEvents from '@/hooks/event.hook';
 import EventCard from './EventCard';
+import { useEvents } from '@/hooks';
 
 const Events = () => {
   const { eventData: items, isLoading, isError } = useEvents('6');
