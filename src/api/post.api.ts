@@ -4,4 +4,8 @@ const postEvent = (value: any) => {
   return axiosClient.post(`/events`, value);
 };
 
-export { postEvent };
+const recentEvent = (value: any) => {
+  return axiosClient.post(`/recent`, value);
+};
+
+export { postEvent, recentEvent };
