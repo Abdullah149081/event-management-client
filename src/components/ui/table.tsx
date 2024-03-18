@@ -9,7 +9,10 @@ const Table = React.forwardRef<
   <div className="relative w-full overflow-auto">
     <table
       ref={ref}
-      className={cn('w-full caption-bottom text-sm', className)}
+      className={cn(
+        'w-full caption-bottom rounded-xl bg-gray-900/20 text-sm ',
+        className
+      )}
       {...props}
     />
   </div>
@@ -107,11 +110,11 @@ TableCaption.displayName = 'TableCaption';
 
 export {
   Table,
-  TableHeader,
   TableBody,
+  TableCaption,
+  TableCell,
   TableFooter,
   TableHead,
+  TableHeader,
   TableRow,
-  TableCell,
-  TableCaption,
 };
