@@ -4,4 +4,8 @@ const updateEvent = (id: string, values: any) => {
   return axiosClient.put(`/events/${id}`, values);
 };
 
-export { updateEvent };
+const updateRecent = (id: string, values: any) => {
+  return axiosClient.put(`/recent/${id}`, values);
+};
+
+export { updateEvent, updateRecent };
