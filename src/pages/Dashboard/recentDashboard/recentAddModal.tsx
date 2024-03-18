@@ -3,20 +3,16 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import { z } from 'zod';
-import Modal from '@/components/ui/modal';
-import RecentForm from './RecentForm';
+import { recentEvent } from '@/api';
 
-export const recentFormSchema = z.object({
-  img: z.string().url(),
-  description: z
-    .string()
-    .min(2, {
-      message: 'Description is too short',
-    })
-    .max(133, { message: 'Description is too long' }),
-});
+import { useRecent } from '@/hooks';
+import handlePost from '@/utils/handlePost';
+import { recentFormSchema } from '@/validate';
+import RecentForm from './RecentForm';
+import Modal from '@/components/ui/modal';
 
 const RecentAddModal = () => {
+  const { refetch } = useRecent('');
   const form = useForm<z.infer<typeof recentFormSchema>>({
     resolver: zodResolver(recentFormSchema),
     defaultValues: {
@@ -27,7 +23,7 @@ const RecentAddModal = () => {
 
   function onSubmit(values: z.infer<typeof recentFormSchema>) {
     console.log(values);
-    // handlePost(values, postEvent, refetch, form.reset);
+    handlePost(values, recentEvent, refetch, form.reset);
   }
 
   return (
