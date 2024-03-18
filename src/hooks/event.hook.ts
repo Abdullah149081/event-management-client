@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { useQuery } from '@tanstack/react-query';
 import axiosClient from '@/network/apiClient.axios';
 
@@ -11,7 +12,7 @@ const fetchEvents = async (limit: string) => {
   }
 };
 
-const useEvents = (limit: string) => {
+export const useEvents = (limit: string) => {
   const {
     data: eventData,
     refetch,
@@ -24,5 +25,3 @@ const useEvents = (limit: string) => {
 
   return { eventData, refetch, isError, isLoading };
 };
-
-export default useEvents;
