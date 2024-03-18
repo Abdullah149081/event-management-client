@@ -7,3 +7,9 @@ export type TEvent = {
   name: string;
   img: string;
 };
+
+export type TRecent = {
+  _id: string;
+  img: string;
+  description: string;
+};
