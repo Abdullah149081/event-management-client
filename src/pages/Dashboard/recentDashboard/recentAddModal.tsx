@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import { z } from 'zod';
-import { recentEvent } from '@/api';
+import { postRecentEvent } from '@/api';
 
 import { useRecent } from '@/hooks';
 import handlePost from '@/utils/handlePost';
@@ -22,8 +22,7 @@ const RecentAddModal = () => {
   });
 
   function onSubmit(values: z.infer<typeof recentFormSchema>) {
-    console.log(values);
-    handlePost(values, recentEvent, refetch, form.reset);
+    handlePost(values, postRecentEvent, refetch, form.reset);
   }
 
   return (
