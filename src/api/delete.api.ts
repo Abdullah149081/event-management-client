@@ -8,4 +8,8 @@ const deleteRecent = (id: string) => {
   return axiosClient.delete(`/recent/${id}`);
 };
 
-export { deleteEvent, deleteRecent };
+const deleteService = (id: string) => {
+  return axiosClient.delete(`/services/${id}`);
+};
+
+export { deleteEvent, deleteRecent, deleteService };
