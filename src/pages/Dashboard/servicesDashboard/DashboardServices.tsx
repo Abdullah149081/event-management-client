@@ -71,7 +71,11 @@ const DashboardServices = () => {
 
                   <ul className="mt-3 flex flex-col items-start justify-start gap-4 ">
                     {service.services?.map((item, idx) => (
-                      <ServicesItems key={idx} service={item} />
+                      <ServicesItems
+                        key={idx}
+                        service={item}
+                        className="bg-black/10"
+                      />
                     ))}
                   </ul>
                 </Modal>
