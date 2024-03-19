@@ -1,9 +1,19 @@
-import { checkIcon } from '@/assets/icon';
 import Container from '@/components/ui/Container';
+import Loading from '@/components/ui/loading';
+
+import { useEvents, useRecent, useServices } from '@/hooks';
+import ServicesItems from '../services/ServicesItems';
 import GalleryCard from './GalleryCard';
 import ImageGallery from './ImageGallery';
 
 const Gallery = () => {
+  const { eventData, isLoading, isError } = useEvents('');
+  const { recentData, isLoading: recentLoading } = useRecent('');
+  const { servicesData, isLoading: servicesLoading } = useServices('');
+
+  if (isLoading || recentLoading || servicesLoading) return <Loading />;
+  if (isError) return <Loading error />;
+
   return (
     <Container className="pb-16 xl:pb-28 ">
       <div className="flex flex-col items-center justify-start gap-[78px]   md:gap-[88.64px] lg:flex-row xl:gap-[120px]">
@@ -15,53 +25,42 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-          <div className=" text-sm  font-normal leading-snug text-slate-500 md:w-[385.58px] md:text-sm md:leading-snug   xl:w-[522px] xl:text-lg xl:leading-[28.80px]">
-            Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
-            posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
-          </div>
-          <div className="flex flex-col items-start justify-start gap-4">
-            <div className="flex flex-col items-start justify-start gap-4">
-              <div className="flex items-center justify-start gap-[18px]">
-                <div className="relative h-5 w-5">
-                  <div className="absolute left-0 top-0 h-5 w-5 rounded-full bg-black bg-opacity-10" />
-                  <img
-                    alt="check icon"
-                    src={checkIcon}
-                    className="absolute left-[5px] top-[5px] size-[10px]"
-                  />
-                </div>
-                <div className="font-plus font-normal  text-black md:text-sm md:leading-tight xl:text-lg xl:leading-[27px]">
-                  One day pas access all lecture
-                </div>
-              </div>
-            </div>
-          </div>
+          <p className=" text-sm  font-normal leading-snug text-slate-500 md:w-[385.58px] md:text-sm md:leading-snug   xl:w-[522px] xl:text-lg xl:leading-[28.80px]">
+            {servicesData[0]?.description}
+          </p>
+          <ul className="mt-3 flex flex-col items-start justify-start gap-4 ">
+            {servicesData[0]?.services.map((item, index) => (
+              <ServicesItems
+                key={index}
+                service={item}
+                className="bg-black/10"
+              />
+            ))}
+          </ul>
         </div>
         <div className="flex items-center justify-start gap-[9.08px]  md:gap-[11.82px] xl:gap-4">
           {/* 1 */}
           <GalleryCard item="1">
-            <ImageGallery img="1" src="https://via.placeholder.com/128x192" />
-            <ImageGallery img="2" src="https://via.placeholder.com/172x258" />
+            <ImageGallery img="1" src={servicesData[0].img} />
+            <ImageGallery img="2" src={servicesData[1].img} />
           </GalleryCard>
 
           {/* 2 */}
           <GalleryCard item="2">
-            <ImageGallery img="3" src="https://via.placeholder.com/128x212" />
-            <ImageGallery img="4" src="https://via.placeholder.com/128x215" />
-            <ImageGallery img="5" src="https://via.placeholder.com/128x160" />
+            <ImageGallery img="3" src={servicesData[2].img} />
+            <ImageGallery img="4" src={eventData[0].img} />
+            <ImageGallery img="5" src={eventData[1].img} />
           </GalleryCard>
           {/* 3  */}
           <GalleryCard item="3">
-            <ImageGallery img="6" src="https://via.placeholder.com/128x171" />
-            <ImageGallery img="7" src="https://via.placeholder.com/128x172" />
-            <ImageGallery img="8" src="https://via.placeholder.com/128x192" />
+            <ImageGallery img="6" src={recentData[0].img} />
+            <ImageGallery img="7" src={eventData[2].img} />
+            <ImageGallery img="8" src={eventData[3].img} />
           </GalleryCard>
           {/* 4 */}
           <GalleryCard item="4">
-            <ImageGallery img="9" src="https://via.placeholder.com/160x255" />
-            <ImageGallery img="10" src="https://via.placeholder.com/128x165" />
+            <ImageGallery img="9" src={eventData[4].img} />
+            <ImageGallery img="10" src={eventData[5].img} />
           </GalleryCard>
         </div>
       </div>
