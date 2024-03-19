@@ -13,3 +13,11 @@ export type TRecent = {
   img: string;
   description: string;
 };
+
+export type TService = {
+  _id: string;
+  name: string;
+  img: string;
+  description: string;
+  services: [];
+};
