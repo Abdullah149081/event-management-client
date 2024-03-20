@@ -1,8 +1,18 @@
 import { cn } from '@/lib/utils';
 
-const Loading = ({ error }: { error?: boolean }) => {
+type LoadingProps = {
+  className?: string;
+  error?: boolean;
+};
+
+const Loading = ({ error, className }: LoadingProps) => {
   return (
-    <div className="flex  items-center justify-center gap-1 font-plus text-4xl font-black uppercase tracking-wider">
+    <div
+      className={cn(
+        'flex  items-center justify-center gap-1 font-plus text-4xl font-black uppercase tracking-wider',
+        className
+      )}
+    >
       <p className=" ">L</p>
       <div
         className={cn(
