@@ -2,15 +2,17 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import App from '@/App';
 import DashBoardLayout from '@/components/layout/DashBoardLayout';
 import DashBoard from '@/pages/Dashboard/DashBoard';
-import DashboardRecent from '@/pages/Dashboard/DashBoardRecent';
-import DashboardEvent from '@/pages/Dashboard/DashboardEvent';
-import DashboardServices from '@/pages/Dashboard/DashboardServices';
+import DashboardEvent from '@/pages/Dashboard/eventDashboard/DashboardEvent';
+import DashboardRecent from '@/pages/Dashboard/recentDashboard/DashboardRecent';
+import DashboardServices from '@/pages/Dashboard/servicesDashboard/DashboardServices';
 import Home from '@/pages/Home/Home';
+import ErrorPage from '@/pages/errorPage/error';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
         element: <DashboardEvent />,
       },
       {
-        path: 'dashBoard-react',
+        path: 'dashBoard-recent',
         element: <DashboardRecent />,
       },
       {
