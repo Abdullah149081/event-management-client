@@ -11,7 +11,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-const ServicesForm = ({ form, onSubmit }) => {
+type ServicesFormProps = {
+  form: any;
+  onSubmit: (data: FormData) => void;
+};
+
+const ServicesForm = ({ form, onSubmit }: ServicesFormProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

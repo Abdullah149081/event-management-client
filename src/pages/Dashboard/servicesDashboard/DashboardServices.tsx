@@ -50,7 +50,7 @@ const DashboardServices = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {servicesData.map((service: TService, index: number) => (
+          {servicesData?.map((service: TService, index: number) => (
             <TableRow
               key={service._id}
               className="hover:bg-transparent lg:text-lg"
