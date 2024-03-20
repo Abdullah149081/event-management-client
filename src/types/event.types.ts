@@ -19,5 +19,32 @@ export type TService = {
   name: string;
   img: string;
   description: string;
-  services: [];
+  services: [
+    {
+      label: string;
+      value: string;
+    },
+  ];
+};
+
+export type TReview = {
+  _id: string;
+  img: string;
+  name: string;
+  title: string;
+  review: string;
+};
+
+export type TPlan = {
+  _id: string;
+  name: string;
+  icon: string;
+  price: number;
+  description: string;
+  features: [
+    {
+      text: string;
+      value: boolean;
+    },
+  ];
 };
