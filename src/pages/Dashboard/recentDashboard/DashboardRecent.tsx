@@ -12,6 +12,7 @@ import { useRecent } from '@/hooks';
 import RecentEditModal from './recentEditModal';
 
 import { deleteRecent } from '@/api';
+import WebSiteTitle from '@/components/ui/websiteTitle';
 import { TRecent } from '@/types';
 import handleDelete from '@/utils/handleDelete';
 import RecentAddModal from './recentAddModal';
@@ -37,6 +38,7 @@ const DashboardRecent = () => {
 
   return (
     <div>
+      <WebSiteTitle title="Recent Dashboard" />
       <RecentAddModal />
       <Table className="mt-10 max-w-4xl  rounded-xl bg-gray-900/30 ">
         <TableHeader>

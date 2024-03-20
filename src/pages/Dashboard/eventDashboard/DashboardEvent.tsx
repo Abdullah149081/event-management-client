@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/table';
 
 import { deleteEvent } from '@/api';
+import WebSiteTitle from '@/components/ui/websiteTitle';
 import { useEvents } from '@/hooks';
 import { TEvent } from '@/types';
 import handleDelete from '@/utils/handleDelete';
@@ -35,6 +36,7 @@ const DashboardEvent = () => {
 
   return (
     <div>
+      <WebSiteTitle title="Event Dashboard" />
       <EventAddModal />
       <Table className="mt-10 max-w-3xl">
         <TableHeader>

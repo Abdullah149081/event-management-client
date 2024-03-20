@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import WebSiteTitle from '@/components/ui/websiteTitle';
 import { useServices } from '@/hooks';
 import ServicesItems from '@/pages/Home/services/ServicesItems';
 import { TService } from '@/types';
@@ -38,6 +39,7 @@ const DashboardServices = () => {
 
   return (
     <div>
+      <WebSiteTitle title="Services Dashboard" />
       <ServicesAddModal />
       <Table className="mt-10 max-w-3xl">
         <TableHeader>
