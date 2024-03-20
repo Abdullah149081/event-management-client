@@ -20,7 +20,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             alt=""
           />
           <div className="mt-6 flex flex-col items-start justify-start gap-3 self-stretch">
-            <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
+            <div className="flex  flex-col items-start justify-start gap-2 self-stretch">
               <h2 className="text-center text-[27.98px]  font-extrabold capitalize  leading-[30.78px]  text-black  md:text-2xl md:leading-relaxed  xl:text-[32px] xl:leading-9">
                 {name.charAt(0).toLocaleUpperCase() +
                   name.slice(1).toLowerCase()}
@@ -37,7 +37,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
       {/* hover */}
       <div className=" absolute top-0  z-20 rounded-md  bg-blue-500/40  px-4 py-8  opacity-0 shadow   group-hover:transform  group-hover:animate-fade-down group-hover:opacity-100 group-hover:animate-duration-500 group-hover:animate-ease-linear md:max-w-[304.80px] xl:max-w-[412px] xl:bg-blue-500/5 xl:pl-7">
         <div className=" flex flex-col items-start justify-start gap-3">
-          <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
+          <div className="flex  flex-col items-start justify-start gap-2 self-stretch">
             <h2 className=" text-center  text-[27.98px] font-extrabold  leading-[30.78px] text-black md:text-2xl md:leading-relaxed  xl:text-[32px]  xl:leading-9">
               {name.charAt(0).toLocaleUpperCase() + name.slice(1).toLowerCase()}
             </h2>
