@@ -1,11 +1,9 @@
 import { cn } from '@/lib/utils';
+import { TEvent } from '@/types';
 import { eventGridClassAdd, imgClassAdd } from '@/utils/eventClassAdd';
 
 type EventCardProps = {
-  event: {
-    img: string;
-    name: string;
-  };
+  event: TEvent;
   item: string;
 };
 
