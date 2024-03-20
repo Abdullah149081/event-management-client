@@ -1,3 +1,4 @@
+import WebSiteTitle from '@/components/ui/websiteTitle';
 import Banner from './banner/Banner';
 import BannerGradient from './banner/BannerGradient';
 import Client from './client/Client';
@@ -13,9 +14,10 @@ import Testimonial from './testimonial/Testimonial';
 function Home() {
   return (
     <div className="">
+      <WebSiteTitle title="Home" />
       <div className="relative">
         <BannerGradient />
-        <Banner />
+        <Banner />W
       </div>
       <Client />
       <Services />
