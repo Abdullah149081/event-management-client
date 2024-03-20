@@ -13,7 +13,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
     <div className="group relative">
       <div className=" flex h-full   max-w-[412px] flex-col items-start justify-start gap-6 rounded-md bg-black bg-opacity-5 px-[25px] pb-[30px] pt-[25px] group-hover:bg-transparent ">
         {/* card  */}
-        <div className="  group-hover:opacity-0 ">
+        <div className="transition duration-300  ease-in-out group-hover:opacity-0">
           <img
             className="h-[221.20px] w-[316.50px] rounded-md object-cover  md:h-[187.17px] md:w-[267.81px] xl:h-[253px] xl:w-[362px]"
             src={img}
@@ -35,7 +35,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
         </div>
       </div>
       {/* hover */}
-      <div className=" absolute  top-0 z-20 transform rounded-md  bg-blue-500/40 px-4  py-8 opacity-0   shadow transition duration-500 ease-in-out group-hover:opacity-100 md:max-w-[304.80px] xl:max-w-[412px] xl:bg-blue-500/5 xl:pl-7">
+      <div className=" absolute top-0  z-20 rounded-md  bg-blue-500/40  px-4 py-8  opacity-0 shadow   group-hover:transform  group-hover:animate-fade-down group-hover:opacity-100 group-hover:animate-delay-[5ms] group-hover:animate-duration-500 group-hover:animate-ease-linear md:max-w-[304.80px] xl:max-w-[412px] xl:bg-blue-500/5 xl:pl-7">
         <div className=" flex flex-col items-start justify-start gap-3">
           <div className="flex h-[35px] flex-col items-start justify-start gap-2 self-stretch">
             <h2 className=" text-center  text-[27.98px] font-extrabold  leading-[30.78px] text-black md:text-2xl md:leading-relaxed  xl:text-[32px]  xl:leading-9">
