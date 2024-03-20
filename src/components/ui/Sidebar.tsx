@@ -42,7 +42,7 @@ const Sidebar = () => {
     <aside className=" no-scrollbar sticky left-0 top-0 col-span-2 h-screen overflow-y-scroll bg-gradient-to-t from-gray-700/20 from-25% to-cyan-700/20 to-80%  text-white shadow-2xl">
       <nav>
         <ul className="mt-4">
-          {navAdmin.map((item) => (
+          {navAdmin?.map((item) => (
             <li className="p-3" key={item.name}>
               <NavLink
                 to={item.path}
