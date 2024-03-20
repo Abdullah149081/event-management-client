@@ -17,7 +17,7 @@ function Home() {
       <WebSiteTitle title="Home" />
       <div className="relative">
         <BannerGradient />
-        <Banner />W
+        <Banner />
       </div>
       <Client />
       <Services />

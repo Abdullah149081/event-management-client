@@ -4,7 +4,7 @@ import WebSiteTitle from '@/components/ui/websiteTitle';
 import './error.css';
 
 export default function ErrorPage() {
-  const { error } = useRouteError();
+  const { error } = useRouteError() as { error: any };
 
   return (
     <div id="notfound">
