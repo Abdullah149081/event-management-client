@@ -9,7 +9,7 @@ type FeaturesProps = {
 const Features = ({ feature }: FeaturesProps) => {
   const { text, value } = feature || {};
   return (
-    <div className="flex max-w-[360px] flex-col items-start justify-center gap-5 pt-5">
+    <li className="flex max-w-[360px] flex-col items-start justify-center gap-5 pt-5">
       <div
         className={cn(
           'flex items-start justify-start gap-3',
@@ -34,7 +34,7 @@ const Features = ({ feature }: FeaturesProps) => {
           {text}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

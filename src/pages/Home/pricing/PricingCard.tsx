@@ -67,20 +67,23 @@ const PricingCard = ({ plan }: PricingCardProps) => {
           </div>
         </div>
         {/* button  */}
-        <Button className="mt-8 flex h-12 max-w-[237px] items-center justify-center gap-3 rounded-[7px] border border-blue-600 bg-white px-8 text-blue-600 hover:bg-blue-600 hover:text-white">
+        <Button
+          type="button"
+          className="mt-8 flex h-12 max-w-[237px] items-center justify-center gap-3 rounded-[7px] border border-blue-600 bg-white px-8 text-blue-600 hover:bg-blue-600 hover:text-white"
+        >
           <span className="  text-base font-bold capitalize leading-[48px] ">
             Get this package
           </span>
-          <div className="flex h-6 w-6 items-center justify-center">
+          <figure className="flex h-6 w-6 items-center justify-center">
             <img src={arrowRightIcon} alt="icon" className="relative h-6 w-6" />
-          </div>
+          </figure>
         </Button>
         {/* features  */}
-        <div className="mt-14">
+        <ul className="mt-14">
           {features?.map((feature, index) => (
             <Features key={index} feature={feature} />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
