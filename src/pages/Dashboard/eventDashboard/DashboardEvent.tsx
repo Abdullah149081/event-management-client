@@ -11,11 +11,11 @@ import {
 } from '@/components/ui/table';
 
 import { deleteEvent } from '@/api';
+import { useEvents } from '@/hooks';
 import { TEvent } from '@/types';
 import handleDelete from '@/utils/handleDelete';
 import EventAddModal from './eventAddModal';
 import EventEditModal from './eventEditModal';
-import { useEvents } from '@/hooks';
 
 const DashboardEvent = () => {
   const { eventData, isLoading, refetch } = useEvents('');
@@ -46,7 +46,7 @@ const DashboardEvent = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {eventData.map((event: TEvent, index: number) => (
+          {eventData?.map((event: TEvent, index: number) => (
             <TableRow
               key={event._id}
               className="hover:bg-transparent lg:text-lg"
