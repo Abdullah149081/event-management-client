@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import axiosClient from '@/network/apiClient.axios';
 import { useQuery } from '@tanstack/react-query';
+import axiosClient from '@/network/apiClient.axios';
 
 const fetchPricing = async () => {
   try {
@@ -17,7 +17,7 @@ export const usePricing = () => {
     isError,
     isLoading,
   } = useQuery({
-    queryKey: ['events'],
+    queryKey: ['pricing'],
     queryFn: () => fetchPricing(),
   });
 
