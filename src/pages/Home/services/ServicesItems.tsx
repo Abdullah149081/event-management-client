@@ -1,8 +1,9 @@
 import check from '@/assets/icon/fi-check.svg';
 import { cn } from '@/lib/utils';
+import { TService } from '@/types';
 
 type ServiceItemsProps = {
-  service: any;
+  service: TService['services'][0];
   className?: string;
 };
 

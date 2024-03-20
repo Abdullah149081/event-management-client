@@ -1,13 +1,9 @@
 import { Button } from '@/components/ui/button';
+import { TService } from '@/types';
 import ServicesItems from './ServicesItems';
 
 type ServiceCardProps = {
-  service: {
-    name: string;
-    img: string;
-    description: string;
-    services: string[];
-  };
+  service: TService;
 };
 
 const ServiceCard = ({ service }: ServiceCardProps) => {
@@ -31,7 +27,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
               </h2>
             </div>
             <ul className="mt-3 flex flex-col items-start justify-start gap-4 ">
-              {services.map((item, index) => (
+              {services?.map((item, index) => (
                 <ServicesItems key={index} service={item} />
               ))}
             </ul>
@@ -51,7 +47,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           </p>
         </div>
         <ul className="mt-8 flex flex-col items-start justify-start gap-4 ">
-          {services.map((item, index) => (
+          {services?.map((item, index) => (
             <ServicesItems key={index} service={item} />
           ))}
         </ul>
