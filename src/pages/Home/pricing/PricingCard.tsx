@@ -1,22 +1,15 @@
 import { arrowRightIcon } from '@/assets/icon';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { TPlan } from '@/types';
 import Features from './Features';
 
 type PricingCardProps = {
-  plan: {
-    name: string;
-    price: number;
-    icon: string;
-    features: {
-      text: string;
-      value: boolean;
-    }[];
-  };
+  plan: TPlan;
 };
 
 const PricingCard = ({ plan }: PricingCardProps) => {
-  const { name, price, icon, features } = plan || {};
+  const { name, price, icon, features, description } = plan || {};
 
   return (
     <div className="relative py-[28px]   font-inter">
@@ -60,7 +53,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
                 name === 'Business' && 'text-red-500'
               )}
             >
-              {price}
+              ${price}
             </div>
           </div>
         </div>
@@ -70,8 +63,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
             {name}
           </div>
           <div className="  text-base font-normal leading-normal text-slate-600">
-            Upgrade your social portfolio with a stunning profile & enhanced
-            shots.
+            {description}
           </div>
         </div>
         {/* button  */}
@@ -85,7 +77,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
         </Button>
         {/* features  */}
         <div className="mt-14">
-          {features.map((feature, index) => (
+          {features?.map((feature, index) => (
             <Features key={index} feature={feature} />
           ))}
         </div>

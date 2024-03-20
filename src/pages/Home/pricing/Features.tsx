@@ -1,11 +1,9 @@
 import { checkIcon } from '@/assets/icon';
 import { cn } from '@/lib/utils';
+import { TPlan } from '@/types';
 
 type FeaturesProps = {
-  feature: {
-    text: string;
-    value: boolean;
-  };
+  feature: TPlan['features'][0];
 };
 
 const Features = ({ feature }: FeaturesProps) => {
