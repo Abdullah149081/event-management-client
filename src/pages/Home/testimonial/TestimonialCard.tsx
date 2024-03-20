@@ -1,8 +1,14 @@
-const TestimonialCard = ({ review }) => {
+import { TReview } from '@/types';
+
+type TestimonialCardProps = {
+  review: TReview;
+};
+
+const TestimonialCard = ({ review }: TestimonialCardProps) => {
   const { img, name, title, review: comment } = review || {};
 
   return (
-    <div className="flex h-[265.19px] w-full flex-col items-start justify-center  gap-[19px] rounded-[30px] bg-slate-50 px-5 py-10 group-hover:bg-blue-600 md:h-[270px] md:w-[412px] xl:h-[312px] xl:w-[513px] xl:pl-10 xl:pr-[73px] ">
+    <div className="flex h-full w-full flex-col items-start justify-center  gap-[19px] rounded-[30px] bg-slate-50 px-5 py-10 group-hover:bg-blue-600  md:w-[412px]  xl:w-[513px] xl:pl-10 xl:pr-[73px] ">
       <div className="flex items-start justify-start gap-5 ">
         <figure className="rounded-full ring-2 ring-primary ring-offset-2 ">
           <img
