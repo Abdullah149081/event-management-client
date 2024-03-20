@@ -10,7 +10,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-const RecentForm = ({ form, onSubmit }) => {
+type RecentFormProps = {
+  form: any;
+  onSubmit: (data: FormData) => void;
+};
+
+const RecentForm = ({ form, onSubmit }: RecentFormProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

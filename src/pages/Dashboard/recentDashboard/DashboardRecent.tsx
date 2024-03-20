@@ -49,7 +49,7 @@ const DashboardRecent = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {recentData.map((recent: TRecent, index: number) => (
+          {recentData?.map((recent: TRecent, index: number) => (
             <TableRow
               key={recent._id}
               className="hover:bg-transparent lg:text-lg"
