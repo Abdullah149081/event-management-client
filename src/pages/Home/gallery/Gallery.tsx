@@ -2,6 +2,7 @@ import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/loading';
 
 import { useEvents, useRecent, useServices } from '@/hooks';
+import { TService } from '@/types';
 import ServicesItems from '../services/ServicesItems';
 import GalleryCard from './GalleryCard';
 import ImageGallery from './ImageGallery';
@@ -29,38 +30,40 @@ const Gallery = () => {
             {servicesData[0]?.description}
           </p>
           <ul className="mt-3 flex flex-col items-start justify-start gap-4 ">
-            {servicesData[0]?.services.map((item, index) => (
-              <ServicesItems
-                key={index}
-                service={item}
-                className="bg-black/10"
-              />
-            ))}
+            {servicesData[0]?.services.map(
+              (item: TService['services'][0], index: number) => (
+                <ServicesItems
+                  key={index}
+                  service={item}
+                  className="bg-black/10"
+                />
+              )
+            )}
           </ul>
         </div>
         <div className="flex items-center justify-start gap-[9.08px]  md:gap-[11.82px] xl:gap-4">
           {/* 1 */}
           <GalleryCard item="1">
-            <ImageGallery img="1" src={servicesData[0].img} />
-            <ImageGallery img="2" src={servicesData[1].img} />
+            <ImageGallery img="1" src={servicesData[0]?.img} />
+            <ImageGallery img="2" src={servicesData[1]?.img} />
           </GalleryCard>
 
           {/* 2 */}
           <GalleryCard item="2">
-            <ImageGallery img="3" src={servicesData[2].img} />
-            <ImageGallery img="4" src={eventData[0].img} />
-            <ImageGallery img="5" src={eventData[1].img} />
+            <ImageGallery img="3" src={servicesData[2]?.img} />
+            <ImageGallery img="4" src={eventData[0]?.img} />
+            <ImageGallery img="5" src={eventData[1]?.img} />
           </GalleryCard>
           {/* 3  */}
           <GalleryCard item="3">
-            <ImageGallery img="6" src={recentData[0].img} />
-            <ImageGallery img="7" src={eventData[2].img} />
-            <ImageGallery img="8" src={eventData[3].img} />
+            <ImageGallery img="6" src={recentData[0]?.img} />
+            <ImageGallery img="7" src={eventData[2]?.img} />
+            <ImageGallery img="8" src={eventData[3]?.img} />
           </GalleryCard>
           {/* 4 */}
           <GalleryCard item="4">
-            <ImageGallery img="9" src={eventData[4].img} />
-            <ImageGallery img="10" src={eventData[5].img} />
+            <ImageGallery img="9" src={eventData[4]?.img} />
+            <ImageGallery img="10" src={eventData[5]?.img} />
           </GalleryCard>
         </div>
       </div>
