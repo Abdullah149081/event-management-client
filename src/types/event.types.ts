@@ -48,3 +48,10 @@ export type TPlan = {
     },
   ];
 };
+
+export type TFeatured = {
+  _id: string;
+  title: string;
+  img: string;
+  follow: string;
+};
