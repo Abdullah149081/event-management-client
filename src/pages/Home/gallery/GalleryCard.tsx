@@ -1,5 +1,9 @@
+import AOS from 'aos';
 import { cn } from '@/lib/utils';
 import { galleryFlexClassAdd } from '@/utils/galleryClassAdd';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 type GalleryCardProps = {
   item: string;
@@ -14,6 +18,9 @@ const GalleryCard = ({ children, item }: GalleryCardProps) => {
         'flex flex-col gap-[9.08px] md:gap-[11.82px]  xl:gap-4 ',
         className
       )}
+      data-aos="zoom-in-up"
+      data-aos-offset="200"
+      data-aos-duration="700"
     >
       {children}
     </div>

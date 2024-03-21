@@ -1,6 +1,10 @@
+import AOS from 'aos';
 import { cn } from '@/lib/utils';
 import { TEvent } from '@/types';
 import { eventGridClassAdd, imgClassAdd } from '@/utils/eventClassAdd';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 type EventCardProps = {
   event: TEvent;
@@ -18,6 +22,9 @@ const EventCard = ({ event, item }: EventCardProps) => {
         'flex flex-col gap-3 rounded-md bg-slate-400 bg-opacity-10 p-6',
         gridClass
       )}
+      data-aos="zoom-in-up"
+      data-aos-duration="700"
+      data-aos-easing="linear"
     >
       <img
         className={cn(' rounded-md object-cover', imgClass)}

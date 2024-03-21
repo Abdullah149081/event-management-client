@@ -1,8 +1,13 @@
+import AOS from 'aos';
 import { arrowRightIcon } from '@/assets/icon';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { TPlan } from '@/types';
 import Features from './Features';
+
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 type PricingCardProps = {
   plan: TPlan;
@@ -12,7 +17,13 @@ const PricingCard = ({ plan }: PricingCardProps) => {
   const { name, price, icon, features, description } = plan || {};
 
   return (
-    <div className="relative py-[28px]   font-inter">
+    <div
+      className="relative py-[28px]   font-inter"
+      data-aos="zoom-in"
+      data-aos-offset="200"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       {name === 'Premium' && (
         <div className="absolute top-0  w-full">
           <div className="  mx-auto flex w-1/2 flex-col items-center justify-center gap-2.5 rounded-tl-xl rounded-tr-xl bg-blue-600 px-4 py-[9px]">

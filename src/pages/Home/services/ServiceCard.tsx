@@ -1,6 +1,10 @@
+import AOS from 'aos';
 import { Button } from '@/components/ui/button';
 import { TService } from '@/types';
+import 'aos/dist/aos.css';
 import ServicesItems from './ServicesItems';
+
+AOS.init();
 
 type ServiceCardProps = {
   service: TService;
@@ -10,7 +14,16 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
   const { name, img, description, services } = service || {};
 
   return (
-    <div className="group relative">
+    <div
+      className="group relative"
+      data-aos="zoom-in"
+      data-aos-offset="200"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      // data-aos-mirror="true"
+      // data-aos-once="false"
+      // data-aos-anchor-placement="top-center"
+    >
       <div className=" flex h-full   max-w-[412px] flex-col items-start justify-start gap-6 rounded-md bg-black bg-opacity-5 px-[25px] pb-[30px] pt-[25px] group-hover:bg-transparent ">
         {/* card  */}
         <div className="transition duration-300  ease-in-out group-hover:opacity-0">
