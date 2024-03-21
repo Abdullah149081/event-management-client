@@ -1,6 +1,6 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Container from '@/components/ui/Container';
 
 const Navbar = () => {
@@ -43,7 +43,16 @@ const Navbar = () => {
                 key={idx}
                 className="font-medium text-gray-600 hover:text-indigo-600"
               >
-                <Link to={item.path}>{item.title}</Link>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-black hover:text-blue-700'
+                      : 'text-gray-600 hover:text-blue-700'
+                  }
+                >
+                  {item.title}
+                </NavLink>
               </li>
             ))}
           </ul>
