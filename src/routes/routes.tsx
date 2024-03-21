@@ -6,6 +6,8 @@ import DashboardEvent from '@/pages/Dashboard/eventDashboard/DashboardEvent';
 import DashboardRecent from '@/pages/Dashboard/recentDashboard/DashboardRecent';
 import DashboardServices from '@/pages/Dashboard/servicesDashboard/DashboardServices';
 import Home from '@/pages/Home/Home';
+import AboutUsPage from '@/pages/about/aboutUsPage';
+import ContactUsPage from '@/pages/contact/contactUsPage';
 import ErrorPage from '@/pages/errorPage/error';
 
 const router = createBrowserRouter([
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'about',
+        element: <AboutUsPage />,
+      },
+      {
+        path: 'contact',
+        element: <ContactUsPage />,
       },
     ],
   },
