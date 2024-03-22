@@ -21,7 +21,7 @@ pnpm i
 
 7. Start the development server:
 
-[Server Repository](https://github.com/Abdullah149081/event-managment-server)
+[Server Repository](https://github.com/programming-hero-web-course1/l2-b2-assignment-5-simple-backend-Abdullah149081)
 
 ## Features
 
