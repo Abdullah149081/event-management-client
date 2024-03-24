@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { RouterProvider } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
+import AuthProviders from './context/authProviders';
 import './index.css';
 import router from './routes/routes';
 
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <AuthProviders>
+          <RouterProvider router={router} />
+        </AuthProviders>
         <Toaster />
       </QueryClientProvider>
     </HelmetProvider>
