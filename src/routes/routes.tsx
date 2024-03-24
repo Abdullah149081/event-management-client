@@ -9,6 +9,8 @@ import Home from '@/pages/Home/Home';
 import AboutUsPage from '@/pages/about/aboutUsPage';
 import ContactUsPage from '@/pages/contact/contactUsPage';
 import ErrorPage from '@/pages/errorPage/error';
+import Login from '@/pages/login/login';
+import PrivateRoutes from './privateRoute';
 
 const router = createBrowserRouter([
   {
@@ -44,17 +46,33 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashBoard-event',
-        element: <DashboardEvent />,
+        element: (
+          <PrivateRoutes>
+            <DashboardEvent />
+          </PrivateRoutes>
+        ),
       },
       {
         path: 'dashBoard-recent',
-        element: <DashboardRecent />,
+        element: (
+          <PrivateRoutes>
+            <DashboardRecent />
+          </PrivateRoutes>
+        ),
       },
       {
         path: 'dashBoard-services',
-        element: <DashboardServices />,
+        element: (
+          <PrivateRoutes>
+            <DashboardServices />
+          </PrivateRoutes>
+        ),
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
 
